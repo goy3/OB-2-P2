@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EventosOrganizador.aspx" />
-    <Content Include="ListaEventosPorOrganizador.aspx" />
     <Content Include="MenuAdministrador.aspx" />
     <Content Include="MenuOrganizador.aspx" />
     <Content Include="MostrarServicios.aspx" />
@@ -102,13 +101,6 @@
     </Compile>
     <Compile Include="Inicio.Master.designer.cs">
       <DependentUpon>Inicio.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ListaEventosPorOrganizador.aspx.cs">
-      <DependentUpon>ListaEventosPorOrganizador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListaEventosPorOrganizador.aspx.designer.cs">
-      <DependentUpon>ListaEventosPorOrganizador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

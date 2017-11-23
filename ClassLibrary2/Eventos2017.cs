@@ -425,7 +425,7 @@ namespace Dominio
             return valido;
         }
 
-        public bool EsAdministrador(Usuario unUsuario)
+        public bool EsAdministrador(string unUsuario)
         {
             bool administrador = false;
             int posicion = 0;

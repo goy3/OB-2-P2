@@ -31,7 +31,7 @@ namespace AplicacionWeb
             else
             {
                 e.Authenticated = true;
-                Session["usu"] = usu.Usuarioo;
+                Session["usu"] = usu.Email;
 
                 switch (usu.Tipo)
                 {

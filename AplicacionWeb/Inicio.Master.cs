@@ -11,7 +11,7 @@ namespace AplicacionWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblUsuarioSeleccionado.Text = "Bienvenido" + Session["usu"] + "!";
+            lblUsuarioSeleccionado.Text = "Bienvenido " + Session["usu"] + "!";
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)

@@ -23,8 +23,8 @@ namespace AplicacionWeb
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Usuario unUsuario = (Usuario)Session["usu"];
-            if (unE.EsAdministrador(unUsuario) == true)
+            //Usuario unUsuario = (Usuario)Session["usu"];
+            if (unE.EsAdministrador((string)Session["usu"]))
             {
                 //unUsuario.Tipo == 1
                 Response.Redirect("~/MenuAdministrador.aspx");

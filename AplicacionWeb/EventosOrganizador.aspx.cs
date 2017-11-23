@@ -13,7 +13,8 @@ namespace AplicacionWeb
         Eventos2017 unE = Eventos2017.Instancia;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            TablaEventosPorOrganizador.DataSource = unE.DevolverEventosDeOrganizador((string)Session["usu"]);
+            TablaEventosPorOrganizador.DataBind();
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
@@ -25,8 +26,8 @@ namespace AplicacionWeb
         {
             //Usuario unUsuario = unE.BuscarOrganizadorPorMail((string)Session["usu"]);
             //Response.Redirect("~/ListaEventosPorOrganizador.aspx");
-            TablaEventosPorOrganizador.DataSource = unE.DevolverEventosDeOrganizador((string)Session["usu"]);
-            TablaEventosPorOrganizador.DataBind();
+            //TablaEventosPorOrganizador.DataSource = unE.DevolverEventosDeOrganizador((string)Session["usu"]);
+            //TablaEventosPorOrganizador.DataBind();
         }
     }
 }
