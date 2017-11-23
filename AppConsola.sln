@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "ClassLibrary2\Dominio.csproj", "{43EC364C-9B0B-4677-B40D-6E56DC25E059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicacionWeb", "AplicacionWeb\AplicacionWeb.csproj", "{50CE3E8D-C2F1-411E-A80F-586BB797C2FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43EC364C-9B0B-4677-B40D-6E56DC25E059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EC364C-9B0B-4677-B40D-6E56DC25E059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EC364C-9B0B-4677-B40D-6E56DC25E059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EC364C-9B0B-4677-B40D-6E56DC25E059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CE3E8D-C2F1-411E-A80F-586BB797C2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CE3E8D-C2F1-411E-A80F-586BB797C2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CE3E8D-C2F1-411E-A80F-586BB797C2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CE3E8D-C2F1-411E-A80F-586BB797C2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

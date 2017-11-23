@@ -1,0 +1,19 @@
+c:\users\dell\documents\visual studio 2015\Projects\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+c:\users\dell\documents\visual studio 2015\Projects\ClassLibrary2\ConsoleApplication1\obj\Debug\appConsola.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ClassLibrary2\ConsoleApplication1\bin\Debug\ClassLibrary2.dll
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ClassLibrary2\ConsoleApplication1\bin\Debug\ClassLibrary2.pdb
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ClassLibrary2\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ClassLibrary2\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+I:\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+I:\ClassLibrary2\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+I:\ClassLibrary2\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+I:\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+I:\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+I:\ClassLibrary2\ConsoleApplication1\bin\Debug\ClassLibrary2.dll
+I:\ClassLibrary2\ConsoleApplication1\bin\Debug\ClassLibrary2.pdb
+I:\ClassLibrary2\ConsoleApplication1\obj\Debug\appConsola.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\ClassLibrary2\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\DELL\Desktop\ClassLibrary2\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\DELL\Desktop\ClassLibrary2\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
