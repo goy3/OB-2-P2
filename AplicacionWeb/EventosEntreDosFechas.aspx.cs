@@ -28,12 +28,19 @@ namespace AplicacionWeb
         {
             foreach (Evento unEvento in Eventos2017.Instancia.Eventos)
             {
-                if(fechaFinal > unEvento.Fecha && fechaFinal < unEvento.Fecha)
+                if(fechaFinal > unEvento.Fecha && fechaInicial < unEvento.Fecha)
                 {
+                    Panel1.Visible = false;
+                    Panel2.Visible = false;
                     TablaMostrarEventosEntreDosFechas.DataSource = Eventos2017.Instancia.Eventos;
                     TablaMostrarEventosEntreDosFechas.DataBind();
                 }
             }
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/MenuAdministrador.aspx");
         }
     }
 }

@@ -13,6 +13,15 @@ namespace AplicacionWeb {
     public partial class EventosEntreDosFechas {
         
         /// <summary>
+        /// Control btnVolver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolver;
+        
+        /// <summary>
         /// Control Panel1.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace AplicacionWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMostrarEventos;
+        
+        /// <summary>
+        /// Control Panel3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel3;
         
         /// <summary>
         /// Control TablaMostrarEventosEntreDosFechas.
