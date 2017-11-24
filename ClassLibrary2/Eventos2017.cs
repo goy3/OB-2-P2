@@ -58,6 +58,12 @@ namespace Dominio
             get { return servicios; }
             set { servicios = value; }
         }
+
+        public List<Evento> Eventos
+        {
+            get { return eventos; }
+            set { eventos = value; }
+        }
         #endregion
         #region Metodos
 
@@ -250,10 +256,10 @@ namespace Dominio
         /// retorna la lista de eventos
         /// </summary>
         /// <returns></returns>
-        public List<Evento> Eventos()
-        {
-            return eventos;
-        }
+        //public List<Evento> Eventos()
+        //{
+        //    return eventos;
+        //}
 
         /// <summary>
         /// recorre la lista de servicios 

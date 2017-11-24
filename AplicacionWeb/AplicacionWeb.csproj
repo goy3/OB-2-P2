@@ -66,7 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EventosEntreDosFechas.aspx" />
     <Content Include="EventosOrganizador.aspx" />
+    <Content Include="EventosQueNoUtilizanUnServicio.aspx" />
     <Content Include="MenuAdministrador.aspx" />
     <Content Include="MenuOrganizador.aspx" />
     <Content Include="MostrarServicios.aspx" />
@@ -88,12 +90,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventosEntreDosFechas.aspx.cs">
+      <DependentUpon>EventosEntreDosFechas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventosEntreDosFechas.aspx.designer.cs">
+      <DependentUpon>EventosEntreDosFechas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EventosOrganizador.aspx.cs">
       <DependentUpon>EventosOrganizador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EventosOrganizador.aspx.designer.cs">
       <DependentUpon>EventosOrganizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventosQueNoUtilizanUnServicio.aspx.cs">
+      <DependentUpon>EventosQueNoUtilizanUnServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventosQueNoUtilizanUnServicio.aspx.designer.cs">
+      <DependentUpon>EventosQueNoUtilizanUnServicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.Master.cs">
       <DependentUpon>Inicio.Master</DependentUpon>

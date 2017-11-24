@@ -33,12 +33,12 @@ namespace AplicacionWeb
 
         protected void btnEventosEntreFechas_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/EventosEntreDosFechas.aspx");
         }
 
         protected void btnEventosQueNoUtilizanServico_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/EventosQueNoUtilizanUnServicio.aspx");
         }
     }
 }
