@@ -22,6 +22,7 @@ namespace AplicacionWeb
             string contrasenia = txtContrasenia.Text;
           
             Usuario usu = unE.BuscarUsuario(email);
+            
             while (usu != null)
             {
                 lblMensajeEmail.Text = "El mail ingresado ya existe. Por favor elija otro";

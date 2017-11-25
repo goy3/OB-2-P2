@@ -4,19 +4,67 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
 
 namespace AplicacionWeb
 {
     public partial class RegistroOrganizador : System.Web.UI.Page
     {
+        Eventos2017 unE = Eventos2017.Instancia;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/MenuOrganizador.aspx");
+            string email = txtEmail.Text;
+            string contrasenia = txtContrasenia.Text;
+            string nombre = txtNombre.Text;
+            int telefono = int.Parse(txtTelefono.Text);
+            string direccion = txtDireccion.Text;
+
+            Usuario unUsuario = unE.BuscarUsuario(email);
+
+            if(unUsuario != null)
+            {
+                lblMensajeEmail.Text = "El mail ingresado ya existe. Por favor elija otro";
+                email = txtEmail.Text;
+                unUsuario = unE.BuscarUsuario(email);
+            }
+
+            bool correcto = unE.ValidarEmail(email);
+            while (!correcto)
+            {
+                lblMensajeEmail.Text = "El mail ingresado no es correcto. Ingreselo nuevamente";
+                email = txtEmail.Text;
+                correcto = unE.ValidarEmail(email);
+            }
+
+            correcto = unE.validarContrasenia(contrasenia);
+            while (!correcto)
+            {
+                lblMensajeContrasenia.Text = "contraseña incorrecta! debe contener minimo 8 digitos, una mayuscula y un caracter especial(!.,;)";
+                contrasenia = txtContrasenia.Text;
+                correcto = unE.validarContrasenia(contrasenia);
+            }
+
+            correcto = unE.ValidarNombre(nombre);
+            while (!correcto)
+            {
+                lblNombre.Text = "El nombre debe tener al menos 3 caracteres y puede contener solo 1 espacio";
+                nombre = txtNombre.Text;
+                correcto = unE.ValidarNombre(nombre);
+            }
+
+
+
+            if(unUsuario == null)
+            {
+                unUsuario = new OrganizadorEventos(email, contrasenia, nombre, telefono, direccion);
+                unE.AltaUsuario(unUsuario);
+                Response.Redirect("~/Login.aspx");
+            }
         }
     }
 }

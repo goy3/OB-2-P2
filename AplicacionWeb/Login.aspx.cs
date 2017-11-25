@@ -47,5 +47,10 @@ namespace AplicacionWeb
             }
 
         }
+
+        protected void btnRegistrarOrganizador_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/RegistroOrganizador.aspx");
+        }
     }
 }

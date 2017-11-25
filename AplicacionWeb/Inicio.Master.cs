@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
 
 namespace AplicacionWeb
 {
@@ -19,5 +20,7 @@ namespace AplicacionWeb
             Session["usu"] = null;
             Response.Redirect("~/Login.aspx");
         }
+
+      
     }
 }
