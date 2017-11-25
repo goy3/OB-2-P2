@@ -354,6 +354,21 @@ namespace Dominio
             return esta;
         }
 
+        //public bool ServicioEsta(ServicioComprado unServicioComprado)
+        //{
+        //    List<Evento> EventosSinUnServicio = new List<Evento>();
+        //    //bool esta = false;
+        //    //int posicion = 0;
+        //    foreach (Evento unoEvento in eventos)
+        //    {
+        //        if (unoEvento.ServiciosComprados == unServicioComprado)
+        //        {
+        //            EventosSinUnServicio.Add(unoEvento);
+        //        }
+        //    }
+        //    return EventosSinUnServicio;
+        //}
+
         public bool ValidarEmail(string email)
         {
             bool valido = false;
@@ -425,6 +440,31 @@ namespace Dominio
                 }
             }
             if (contadorCaracterEspecial > 0 && contadorMayuscula > 0)
+            {
+                valido = true;
+            }
+            return valido;
+        }
+
+        public bool ValidarNombre(string nombre)
+        {
+            bool valido = false;
+            int espacio = 0;
+
+
+
+            Char buscarEspacio = ' ';
+
+            for (int k = 0; k < nombre.Length; k++)
+            {
+                if (nombre[k] == buscarEspacio)
+                {
+                    if (k != 0 && k != nombre.Length)
+                        espacio++;
+                }
+
+            }
+            if (nombre.Length > 2 && espacio <= 1)
             {
                 valido = true;
             }
@@ -853,82 +893,6 @@ namespace Dominio
     }
 
 
-    public static bool ValidarEmail(string email)
-    {
-        bool valido = false;
-        int arrobas = 0;
-        int posicionDeArroba = 0;
-        int punto = 0;
-        int posicionDelPunto = 0;
-        int carateresDespuesDelPunto = 0;
-        int espacioVacio = 0;
-
-
-        Char caracterABuscar = '@';
-        Char buscarPunto = '.';
-        Char buscarVacio = ' ';
-
-        for (int i = 1; i < email.Length; i++)
-        {
-            if (email[i] == caracterABuscar)
-            {
-                arrobas++;
-                posicionDeArroba = i;
-            }
-        }
-        for (int j = 0; j < email.Length; j++)
-        {
-            if (email[j] == buscarPunto)
-            {
-                punto++;
-                posicionDelPunto = j;
-            }
-        }
-        for (int k = posicionDelPunto; k < email.Length; k++)
-        {
-            carateresDespuesDelPunto++;
-        }
-        for (int m = 0; m < email.Length; m++)
-        {
-            if (email[m] == buscarVacio)
-            {
-                espacioVacio++;
-            }
-        }
-
-        if (arrobas == 1 && punto == 1 && carateresDespuesDelPunto > 2 && email.Length > 3 && posicionDeArroba < posicionDelPunto && posicionDelPunto - posicionDeArroba > 1 && espacioVacio == 0)
-        {
-            valido = true;
-        }
-        return valido;
-    }
-
-    /*public static bool validarContrasenia(string contrasenia)
-    {
-        bool valido = false;
-        int contadorMayuscula = 0;
-        int contadorCaracterEspecial = 0;
-
-        if (contrasenia.Length > 7)
-        {
-            for (int i = 0; i < contrasenia.Length; i++)
-            {
-                if (Char.IsUpper(contrasenia[i]))
-                {
-                    contadorMayuscula++;
-                }
-                if (contrasenia[i] == '!' || contrasenia[i] == '.' || contrasenia[i] == ',' || contrasenia[i] == ';')
-                {
-                    contadorCaracterEspecial++;
-                }
-            }
-        }
-        if (contadorCaracterEspecial > 0 && contadorMayuscula > 0)
-        {
-            valido = true;
-        }
-        return valido;
-    }
 
     private static bool ValidarNombre(string nombre)
     {

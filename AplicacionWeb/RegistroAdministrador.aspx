@@ -23,6 +23,7 @@
         <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="txtContrasenia" ErrorMessage="*"></asp:RequiredFieldValidator>--%>
         <asp:Label ID="lblMensajeContrasenia" runat="server"></asp:Label>
     </asp:Panel>
+    
     <asp:Panel ID="panel3" runat="server">
         <asp:Button ID="btnRegistrar" Text="Registrar" runat="server" OnClick="btnRegistrar_Click" />
     </asp:Panel>
