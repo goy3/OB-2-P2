@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace AplicacionWeb
 {
@@ -17,6 +18,31 @@ namespace AplicacionWeb
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/MenuOrganizador.aspx");
+        }
+
+        protected void rbManana_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbTarde_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbNoche_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbComun_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbPremium_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
