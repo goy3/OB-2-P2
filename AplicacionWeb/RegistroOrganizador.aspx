@@ -37,5 +37,5 @@
     <asp:Panel ID="panel3" runat="server">
         <asp:Button ID="btnRegistrar" Text="Registrar" runat="server" OnClick="btnRegistrar_Click" />
     </asp:Panel>
-
+    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
 </asp:Content>

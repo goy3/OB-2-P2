@@ -20,43 +20,50 @@ namespace AplicacionWeb
         {
             string email = txtEmail.Text;
             string contrasenia = txtContrasenia.Text;
-          
-            Usuario usu = unE.BuscarUsuario(email);
+
+          if(email == "" || contrasenia == "")
+            {
+                lblMensaje.Text = "Los campos no pueden estar vacios";
+            }
+            else { 
+
+                    Usuario usu = unE.BuscarUsuario(email);
             
-            while (usu != null)
-            {
-                lblMensajeEmail.Text = "El mail ingresado ya existe. Por favor elija otro";
-                email = txtEmail.Text;
-                usu = unE.BuscarUsuario(email);
-            }
+                    if (usu != null)
+                    {
+                        lblMensajeEmail.Text = "El mail ingresado ya existe. Por favor elija otro";
+                        //email = txtEmail.Text;
+                        //usu = unE.BuscarUsuario(email);
+                    }
+                    else
+                    {
+                        bool correcto = unE.ValidarEmail(email);
+                        if (!correcto)
+                        {
+                            lblMensajeEmail.Text = "El mail ingresado no es correcto. Ingreselo nuevamente";
+                        }
+                        else { 
+                                correcto = unE.validarContrasenia(contrasenia);
+                                if (!correcto)
+                                {
+                                    lblMensajeContrasenia.Text = "contraseña incorrecta! debe contener minimo 8 digitos, una mayuscula y un caracter especial(!.,;)";
+                                }
+                                else { 
 
-            bool correcto = unE.ValidarEmail(email);
-            while (!correcto)
-            {
-                lblMensajeEmail.Text = "El mail ingresado no es correcto. Ingreselo nuevamente";
-                email = txtEmail.Text;
-                correcto = unE.ValidarEmail(email);
-            }
-
-            correcto = unE.validarContrasenia(contrasenia);
-            while (!correcto)
-            {
-                lblMensajeContrasenia.Text = "contraseña incorrecta! debe contener minimo 8 digitos, una mayuscula y un caracter especial(!.,;)";
-                contrasenia = txtContrasenia.Text;
-                correcto = unE.validarContrasenia(contrasenia);
-            }
-
-            if(usu == null)
-            {
-                usu = new Administrador(email, contrasenia);
-                unE.AltaUsuario(usu);
-                lblMensaje.Text = "Ingresado con éxito";
-            }
-            else
-            {
-                lblMensaje.Text = "El mail ingresado ya existe por favor elija otro";
-            }
-            
+                                    if (usu == null)
+                                    {
+                                        usu = new Administrador(email, contrasenia);
+                                        unE.AltaUsuario(usu);
+                                        lblMensaje.Text = "Ingresado con éxito";
+                                    }
+                                    else
+                                    {
+                                        lblMensaje.Text = "El mail ingresado ya existe por favor elija otro";
+                                    }
+                                }
+                        }
+                    }
+                }
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

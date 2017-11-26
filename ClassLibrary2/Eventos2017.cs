@@ -15,7 +15,7 @@ namespace Dominio
         private List<Usuario> usuarios;
         private List<Evento> eventos;
         private List<DateTime> fechas;
-        private List<ServicioComprado> serviciosComprados;
+        
             
 
 
@@ -39,12 +39,6 @@ namespace Dominio
         {
             get { return fechas; }
             set { fechas = value; }
-        }
-
-        public List<ServicioComprado> ServiciosComprados
-        {
-            get { return serviciosComprados; }
-            set { serviciosComprados = value; }
         }
 
         public List<Usuario> Usuarios
@@ -89,9 +83,10 @@ namespace Dominio
             AltaEvento(unE1);
             AltaEvento(unE2);
             
-            serviciosComprados = new List<ServicioComprado>();
-            ServicioComprado unSC1 = new ServicioComprado("Cabalgata", "Paseo a caballo por el campo", 150, 5);
-            ServicioComprado unSC2 = new ServicioComprado("Castillo inflable", "Inflable para niños", 200, 22);
+            
+
+            ServicioComprado unSC1 = new ServicioComprado("CABALGATA", "Paseo a caballo por el campo", 150, 5);
+            ServicioComprado unSC2 = new ServicioComprado("CASTILLO INFLABLE", "Inflable para niños", 200, 22);
 
             unE1.ServiciosComprados.Add(unSC1);
             unE2.ServiciosComprados.Add(unSC2);
@@ -354,20 +349,30 @@ namespace Dominio
             return esta;
         }
 
-        //public bool ServicioEsta(ServicioComprado unServicioComprado)
-        //{
-        //    List<Evento> EventosSinUnServicio = new List<Evento>();
-        //    //bool esta = false;
-        //    //int posicion = 0;
-        //    foreach (Evento unoEvento in eventos)
-        //    {
-        //        if (unoEvento.ServiciosComprados == unServicioComprado)
-        //        {
-        //            EventosSinUnServicio.Add(unoEvento);
-        //        }
-        //    }
-        //    return EventosSinUnServicio;
-        //}
+        public List<Evento> ServicioEsta(string unServicio)
+        {
+            List<Evento> EventosSinUnServicio = new List<Evento>();
+            //bool esta = false;
+            //int posicion = 0;
+            foreach (Evento unoEvento in eventos)
+            {
+                bool estaElServicio = false;
+
+                foreach (ServicioComprado unoServicio in unoEvento.ServiciosComprados)
+                {
+                    
+                    if (unoServicio.Nombre == unServicio)
+                    {
+                        estaElServicio = true;
+                    }
+                }
+                if (!estaElServicio)
+                {
+                    EventosSinUnServicio.Add(unoEvento);
+                }
+            }
+            return EventosSinUnServicio;
+        }
 
         public bool ValidarEmail(string email)
         {
@@ -474,11 +479,12 @@ namespace Dominio
         public bool EsAdministrador(string unUsuario)
         {
             bool administrador = false;
-            int posicion = 0;
+            //int posicion = 0;
             foreach (Usuario unoUsuario in usuarios)
             {
-                if(usuarios[posicion].Tipo == Usuario.Rol.ADMINISTRADOR)
+                if(unoUsuario.Email == unUsuario)
                 {
+                    if(unoUsuario.Tipo == Usuario.Rol.ADMINISTRADOR)
                     administrador = true;
                 }
             }

@@ -42,9 +42,9 @@
         <asp:Label ID="lblPremium" runat="server">Premium</asp:Label>
         <asp:RadioButton ID="rbPremium" GroupName="Tipo" runat="server" OnCheckedChanged="rbPremium_CheckedChanged"/>
     </asp:Panel>
-    <asp:Panel ID="PanelFoto" runat="server">
+    <%--<asp:Panel ID="PanelFoto" runat="server">
         <asp:Label ID="lblFoto" runat="server">Foto: </asp:Label>
         <asp:FileUpload ID="FileUpload1" runat="server"/>
         <asp:Button ID="Foto" runat="server" OnClick="Foto_Click"/>
-    </asp:Panel>
+    </asp:Panel>--%>
 </asp:Content>

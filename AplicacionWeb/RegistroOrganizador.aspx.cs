@@ -21,50 +21,66 @@ namespace AplicacionWeb
             string email = txtEmail.Text;
             string contrasenia = txtContrasenia.Text;
             string nombre = txtNombre.Text;
-            int telefono = int.Parse(txtTelefono.Text);
+            string telefono = txtTelefono.Text;
             string direccion = txtDireccion.Text;
 
-            Usuario unUsuario = unE.BuscarUsuario(email);
-
-            if(unUsuario != null)
+            if(email == "" || contrasenia == "" || nombre == "" || telefono == "" || direccion == "")
             {
-                lblMensajeEmail.Text = "El mail ingresado ya existe. Por favor elija otro";
-                email = txtEmail.Text;
-                unUsuario = unE.BuscarUsuario(email);
+                lblMensaje.Text = "Los campos no pueden estar vacios";
             }
-
-            bool correcto = unE.ValidarEmail(email);
-            while (!correcto)
+            else
             {
-                lblMensajeEmail.Text = "El mail ingresado no es correcto. Ingreselo nuevamente";
-                email = txtEmail.Text;
-                correcto = unE.ValidarEmail(email);
+                Usuario unUsuario = unE.BuscarUsuario(email);
+
+                if (unUsuario != null)
+                {
+                    lblMensajeEmail.Text = "El mail ingresado ya existe. Por favor elija otro";
+
+                }
+                else
+                {
+                    bool correcto = unE.ValidarEmail(email);
+                    if (!correcto)
+                    {
+                        lblMensajeEmail.Text = "El mail ingresado no es correcto. Ingreselo nuevamente";
+                    }
+                    else
+                    {
+                        correcto = unE.validarContrasenia(contrasenia);
+                        if (!correcto)
+                        {
+                            lblMensajeContrasenia.Text = "contraseña incorrecta! debe contener minimo 8 digitos, una mayuscula y un caracter especial(!.,;)";
+                        }
+                        else
+                        {
+                            correcto = unE.ValidarNombre(nombre);
+                            if (!correcto)
+                            {
+                                lblNombre.Text = "El nombre debe tener al menos 3 caracteres y puede contener solo 1 espacio";
+                            }
+                            else
+                            {
+                                if (unUsuario == null)
+                                {
+                                    unUsuario = new OrganizadorEventos(email, contrasenia, nombre, telefono, direccion);
+                                    unE.AltaUsuario(unUsuario);
+                                    Response.Redirect("~/Login.aspx");
+                                }
+                            }
+
+
+
+                        }
+
+
+                    }
+
+
+                }
             }
+            
 
-            correcto = unE.validarContrasenia(contrasenia);
-            while (!correcto)
-            {
-                lblMensajeContrasenia.Text = "contraseña incorrecta! debe contener minimo 8 digitos, una mayuscula y un caracter especial(!.,;)";
-                contrasenia = txtContrasenia.Text;
-                correcto = unE.validarContrasenia(contrasenia);
-            }
-
-            correcto = unE.ValidarNombre(nombre);
-            while (!correcto)
-            {
-                lblNombre.Text = "El nombre debe tener al menos 3 caracteres y puede contener solo 1 espacio";
-                nombre = txtNombre.Text;
-                correcto = unE.ValidarNombre(nombre);
-            }
-
-
-
-            if(unUsuario == null)
-            {
-                unUsuario = new OrganizadorEventos(email, contrasenia, nombre, telefono, direccion);
-                unE.AltaUsuario(unUsuario);
-                Response.Redirect("~/Login.aspx");
-            }
+            
         }
     }
 }

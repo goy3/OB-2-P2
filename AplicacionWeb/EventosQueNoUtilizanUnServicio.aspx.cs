@@ -25,10 +25,13 @@ namespace AplicacionWeb
         protected void TablaServicios_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int posServicio;
+            string nombreServicio;
             if(e.CommandName == "Ver")
             {
                 posServicio = int.Parse((string)e.CommandArgument);
-                //TablaEventosSinUnServicio.DataSource = unE.Eventos[posServicio].ServiciosComprados;
+                nombreServicio = unE.Servicios[posServicio].Nombre;
+                List<Evento> EventosSinServicio = unE.ServicioEsta(nombreServicio);
+                TablaEventosSinUnServicio.DataSource = EventosSinServicio;
                 //TablaEventosSinUnServicio.DataSource = unE.ServicioEsta((ServicioComprado)e.CommandArgument);
                 TablaEventosSinUnServicio.DataBind();
                 TablaEventosSinUnServicio.Visible = true;

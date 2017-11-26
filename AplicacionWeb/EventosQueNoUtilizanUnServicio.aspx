@@ -18,7 +18,7 @@
     </asp:Panel>
     <asp:Panel ID="Panel2" runat="server">
         <br />
-        <asp:GridView id="TablaEventosSinUnServicio" runat="server" Visible="false">
+        <asp:GridView id="TablaEventosSinUnServicio" runat="server">
 
         </asp:GridView>
     </asp:Panel>
